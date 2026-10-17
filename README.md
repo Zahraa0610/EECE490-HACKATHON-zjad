@@ -11,11 +11,30 @@ Stories' reported profit figures point toward two decisions: treat Garden as the
 
 The two findings are linked: campaign profitability depends on costs, so Step 2 recalculates its conclusion under four cost scenarios informed by Step 3. The conclusion does not change in any of them.
 
+## Key numbers, by type
+
+**Fact** = measured directly from the data. **Model estimate** = depends on a fitted model and its assumptions. **Scenario** = hypothetical "what if", not a measured or promised saving.
+
+| Number | Type | Source |
+|---|---|---|
+| Garden reported gross margin 46.9% (Harbour 65.0%, Uptown 62.6%) | Fact | [03 §2](notebooks/03_garden_costs.ipynb) |
+| Garden recorded unit cost = Harbour's ÷ 0.7 (within 1 cent) on 45 of 45 products; costs never change in 181 days | Fact | [03 §1](notebooks/03_garden_costs.ipynb) |
+| Recorded-cost difference vs Harbour's unit costs: $15,923 over 181 days | Fact (about the recorded cost field) | [03 §4](notebooks/03_garden_costs.ipynb) |
+| Garden margin 62.9% with Harbour's unit costs | Scenario | [03 §2](notebooks/03_garden_costs.ipynb) |
+| ≈ $32,100/yr (×365/181); ≈ $38,700/yr at June's rate | Scenario: cash only if Garden truly overpays *and* equivalent terms are feasible | [03 §4](notebooks/03_garden_costs.ipynb) |
+| Campaign discount given: $472 on 542 units (March $210, May $262) | Fact | [02 §1](notebooks/02_promo_campaign.ipynb) |
+| Extra promoted units −5 (March), −16 (May) and their ≈90% ranges | Model estimate | [02 §5](notebooks/02_promo_campaign.ipynb) |
+| Harbour gross-profit effect −$308 (March), −$391 (May) | Model estimate | [02 §5](notebooks/02_promo_campaign.ipynb) |
+| Break-even +69 / +90 extra units | Model estimate, under stated mix, discount and cost assumptions | [02 §6](notebooks/02_promo_campaign.ipynb) |
+| Experiment sizing (107 + 107 days for +$30/day; 6-week MDE ≈ +$67/day) | Planning estimate | [02 §10](notebooks/02_promo_campaign.ipynb) |
+| 10% discount: $1,707 over 181 days (≈ $3,400/yr) | Fact (annual figure is a scenario) | [03 §8](notebooks/03_garden_costs.ipynb) |
+
 ## Evidence
 
 - **Garden costing:** [summary](reports/step3_garden_costs.md) · [notebook](notebooks/03_garden_costs.ipynb)
 - **Harbour campaign:** [summary](reports/step2_campaign.md) · [notebook](notebooks/02_promo_campaign.ipynb)
 - **Data-quality audit:** [summary](reports/step1_audit.md) · [notebook](notebooks/01_data_audit.ipynb)
+- **Reproduction check:** [verification report](reports/verification.md), from a fresh clone and a new Python environment
 
 Each notebook separates **measured** facts, **estimates** and **assumptions**. It also lists the alternative explanations tested, the approaches rejected, weak areas, and a practical test Stories can run. Correlation is not presented as proof of cause.
 
