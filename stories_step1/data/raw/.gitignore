@@ -1,0 +1,2 @@
+# Keep the supplied transaction export local by default.
+*.csv

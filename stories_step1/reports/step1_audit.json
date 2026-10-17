@@ -1,0 +1,132 @@
+{
+  "scope": "Step 1 data audit only; no predictive model or causal business recommendation.",
+  "source_filename": "stories_transactions.csv",
+  "source_sha256": "f1672e728c28295b2b802d878fd38a158ba039827b429355e8438ee0463237a1",
+  "source_size_bytes": 5288998,
+  "source_unchanged": true,
+  "rows": 51177,
+  "columns": 14,
+  "purchases": 33887,
+  "branches": [
+    "Garden",
+    "Harbour",
+    "Uptown"
+  ],
+  "products": 45,
+  "categories": 9,
+  "date_start": "2026-01-01",
+  "date_end": "2026-06-30",
+  "calendar_days": 181,
+  "branch_days_without_records": 0,
+  "missing_counts": {
+    "Transaction ID": 0,
+    "Date": 0,
+    "Time": 0,
+    "Branch": 0,
+    "Customer ID": 18691,
+    "Order Type": 0,
+    "Product": 0,
+    "Category": 0,
+    "Quantity": 0,
+    "Unit Price (USD)": 0,
+    "Discount Rate": 0,
+    "Unit Cost (USD)": 0,
+    "Line Revenue (USD)": 0,
+    "Line Gross Profit (USD)": 0
+  },
+  "missing_customer_purchases": 12353,
+  "missing_customer_purchase_percent": 36.4535072446661,
+  "distinct_recorded_customer_ids": 3494,
+  "failed_check_counts": {
+    "Missing or non-numeric: Quantity": 0,
+    "Missing or non-numeric: Unit Price (USD)": 0,
+    "Missing or non-numeric: Discount Rate": 0,
+    "Missing or non-numeric: Unit Cost (USD)": 0,
+    "Missing or non-numeric: Line Revenue (USD)": 0,
+    "Missing or non-numeric: Line Gross Profit (USD)": 0,
+    "Invalid or missing dates": 0,
+    "Invalid or missing timestamps": 0,
+    "Missing required non-customer fields": 0,
+    "Non-positive or non-integer quantities": 0,
+    "Negative unit prices": 0,
+    "Negative unit costs": 0,
+    "Discounts outside 0 to 1": 0,
+    "Revenue mismatches over one cent": 0,
+    "Gross-profit mismatches over one cent": 0,
+    "Transactions with any metadata conflict": 0
+  },
+  "text_whitespace_counts": {
+    "Transaction ID": 0,
+    "Date": 0,
+    "Time": 0,
+    "Branch": 0,
+    "Customer ID": 0,
+    "Order Type": 0,
+    "Product": 0,
+    "Category": 0
+  },
+  "money_check_tolerance_usd": 0.01,
+  "max_revenue_error_usd": 0.005000000000000782,
+  "max_gross_profit_error_usd": 2.6645352591003757e-15,
+  "negative_revenue_rows": 0,
+  "negative_gross_profit_rows": 0,
+  "extra_exact_repeat_rows": 132,
+  "all_rows_involved_in_exact_repeats": 264,
+  "purchases_with_exact_repeats": 132,
+  "primary_totals": {
+    "Product lines": 51177,
+    "Purchases": 33887,
+    "Units": 54087,
+    "Revenue USD": 305925.14,
+    "Gross profit USD": 179430.49
+  },
+  "deduplicated_scenario_totals": {
+    "Product lines": 51045,
+    "Purchases": 33887,
+    "Units": 53955,
+    "Revenue USD": 305183.71,
+    "Gross profit USD": 178994.28
+  },
+  "duplicate_gross_profit_usd": 436.21,
+  "duplicate_gross_profit_percent": 0.24310806931419515,
+  "duplicate_sensitivity_by_branch": [
+    {
+      "Branch": "Garden",
+      "revenue_usd": 99748.55,
+      "gross_profit_usd": 46794.49,
+      "repeated_revenue_usd": 218.0,
+      "repeated_gross_profit_usd": 98.33,
+      "gross_profit_reduction_percent": 0.210132
+    },
+    {
+      "Branch": "Harbour",
+      "revenue_usd": 150483.58,
+      "gross_profit_usd": 97753.94,
+      "repeated_revenue_usd": 384.53,
+      "repeated_gross_profit_usd": 250.48,
+      "gross_profit_reduction_percent": 0.256235
+    },
+    {
+      "Branch": "Uptown",
+      "revenue_usd": 55693.01,
+      "gross_profit_usd": 34882.06,
+      "repeated_revenue_usd": 138.9,
+      "repeated_gross_profit_usd": 87.4,
+      "gross_profit_reduction_percent": 0.250559
+    }
+  ],
+  "products_with_multiple_categories": 0,
+  "branch_product_combinations": 135,
+  "branch_products_with_constant_price": 135,
+  "branch_products_with_constant_cost": 135,
+  "treatment": {
+    "original_file": "Unchanged; no rows dropped and no missing IDs filled.",
+    "duplicate_rows": "Retain in primary analysis; remove exact repeats only in a sensitivity scenario.",
+    "customer_ids": "Leave missing; identified-customer conclusions may not generalize to all purchases.",
+    "working_copy": "Parse dates/times and numeric values without overwriting the source."
+  },
+  "runtime": {
+    "python": "3.13.7",
+    "pandas": "2.2.3"
+  }
+}
