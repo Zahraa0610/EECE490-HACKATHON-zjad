@@ -25,7 +25,7 @@ If a package is missing, confirm that the notebook kernel is using the Python in
 - `reports/step1_audit.json`: the same audit evidence in a structured format.
 - `requirements-step1.txt`: Python dependencies for this step.
 
-The CSV is ignored by the included `data/raw/.gitignore` by default. Code and aggregate reports can be versioned separately; graders with the supplied file can place it at the documented path. A Git ignore rule does not remove any file that is already tracked. This package has not been pushed to GitHub and is not the final hackathon submission.
+The CSV is ignored by the included `data/raw/.gitignore` by default. Code and aggregate reports can be versioned separately; graders with the supplied file can place it at the documented path. A Git ignore rule does not remove any file that is already tracked. See the top-level README for the findings built on this audit.
 
 ## Verification
 
