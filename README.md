@@ -1,26 +1,37 @@
-# Avoiding costly decisions based on misleading profitability numbers
+# Stories Coffee: three profit decisions for the board
 
 **EECE490 Stories Coffee Hackathon — Team: Aya Al Daouk, Zahraa Jouni**
 
-Stories' reported profit figures point toward two decisions: treat Garden as the weak branch, and keep running discount campaigns. We tested both against the transaction data. Garden's reported margin disadvantage is largely explained by its recorded cost table, which should be audited before anyone acts on it. The tested models do not show that Harbour's campaigns generated enough extra demand to justify repeating them unchanged; a controlled experiment is the next step. Branch prices follow a flat rule as well (Uptown ≈ 91.4% of Harbour on every product), which makes a controlled Uptown pricing experiment the clearest new profit lever. A supporting check finds that customer purchase history showed no demonstrated advantage for selecting valuable customers, so it should be validated before any personalised-marketing spend.
+**Do first:** audit Garden's cost table. Garden's recorded unit costs are Harbour's ÷ 0.7 on all 45 products. **Earn or retain money:** up to ≈ $32,100/yr if Garden really pays more for the same goods and cheaper equivalent supply is available; then pilot a half-gap price rise at Uptown (≈ $5,272/yr at unchanged demand); and stop repeating Harbour's 15% campaign unchanged. **What could make it disappear:** if Garden's higher costs are only an accounting allocation, correcting them saves no cash; if Uptown loses about 7% or more of its units, the price rise loses gross profit.
 
-## Board decisions, ranked by gross-profit opportunity
+All dollar figures are **conditional annualised gross-profit opportunities** (H1 × 365/181). They are not net profit, not promised savings, and must not be added into one total.
 
-Dollar figures are **conditional annualised gross-profit opportunities** (H1 × 365/181, only if the stated condition holds). They are **not** net profit, **not** promised savings, and **should not be added together**: each depends on a different condition. Details: [notebook 05](notebooks/05_profit_levers.ipynb).
+## Board decisions
 
-| # | Decision | Conditional annualised GP opportunity | Condition | Owner | First action | Implementation cost considerations |
+| # | Decision | Conditional annualised GP opportunity | What must be true | Owner | First action | Implementation cost considerations |
 |---|---|---|---|---|---|---|
-| 1 | **Audit Garden's cost table** before any margin-based decision about Garden | up to ≈ $32,100/yr | Garden really pays more than Harbour, and equivalent supply terms are feasible | Finance / procurement | Pull supplier invoices for bottled water and 3–5 high-volume products at Garden and Harbour; check the costing rule in the POS/ERP | Staff time only; renegotiating or switching suppliers may bring contract, logistics and quality costs |
-| 2 | **Run an Uptown pricing experiment** (Uptown is priced ≈ 91.4% of Harbour on all 45 products); raise by half the gap first | ≈ $5,300/yr (half gap, +4.7%) to ≈ $10,500/yr (full gap, +9.4%) | Units sold unchanged (same mix). Gross profit still rises unless Uptown loses about 7.0% (half gap) or 13.0% (full gap) of units | Commercial / pricing lead with the Uptown manager | Fix the stop rule and test length; record Uptown's pre-change weekly share of chain units sold | POS price update, menu and signage reprint, staff briefing; risk to customer goodwill and of customers switching branches |
-| 3 | **Test removing the 10% discount** (no targeting pattern) | up to ≈ $3,400/yr | Removal loses no sales; a test of practical length is unlikely to confirm this | Operations with finance | Find out what triggers the discount at the till (policy, staff discretion, POS setting) | POS configuration to switch the discount by day, staff training, possible complaints |
-| 4 | **Don't repeat Harbour's 15% campaign unchanged** | avoids an estimated −$308 / −$391 gross profit per campaign | Model assumptions in Step 2 | Marketing with the Harbour manager | Pause repeat campaigns until a randomised-day test is designed | Planning time; offer days must be followed exactly at the till |
-| 5 | *Supporting:* **Validate customer-history targeting** before committing marketing budget | no dollar figure | — | Marketing with IT / POS | Ask the POS team how Customer ID is attached to a purchase | Audit time; a verified-ID pilot needs POS or app changes |
+| 1 | **Garden: audit the cost table** before any margin-based decision about Garden | up to ≈ $32,100/yr (procurement opportunity) | Garden's actual costs are confirmed higher **and** equivalent cheaper supply is feasible. Correcting an accounting allocation alone saves no cash | Finance / procurement | Pull invoices for bottled water and 3–5 high-volume products at Garden and Harbour; check the costing rule in the POS/ERP | Staff time; supplier changes may bring contract, logistics and quality costs |
+| 2 | **Uptown: proposed half-gap pricing pilot** (+4.7%; Uptown is priced ≈ 91.4% of Harbour on all 45 products) | ≈ $5,272/yr at unchanged demand (see downside table) | Uptown loses less than ≈ 6.97% of units; product mix, costs and discount rates unchanged | Commercial / pricing lead with the Uptown manager | Record pre-pilot weekly gross profit and unit share; agree the guardrail before launch | POS price update, menus and signage, staff briefing; customer goodwill |
+| 3 | **Harbour: don't repeat the 15% campaign unchanged** | model-estimated campaign effects of −$308 (March) and −$391 (May) gross profit | Model assumptions in Step 2; these are estimates, not proven causal savings | Marketing with the Harbour manager | Pause repeats until a randomised-day test is designed | Planning time; offer days must be followed exactly at the till |
 
-**Experiment rules.**
-* **Uptown pricing:** track Uptown's share of chain **units sold**, the same measure as the break-even. **Weekly stop rule:** restore prices if the share is more than 13.0% below its pre-change level for two consecutive weeks. This is a business tolerance set in advance, not a significance test. Test length is a planning choice: 4 weeks can detect only about a 10% change in unit share, larger than the 7.0% half-gap break-even, and 8 weeks about 7%. We recommend 8 weeks and treating an unclear result as "keep current prices".
-* **10% discount:** remove it on randomly chosen days within each week. Weekly reviews check for operational problems and for a gross-profit shortfall beyond a tolerance the board sets in advance. **Not finding significant harm does not show that removal is profitable.** The most likely result is inconclusive, and keeping or removing the discount then remains a business judgement.
+**Uptown half-gap pilot: downside scenarios** (scenario, not a forecast; full-year run-rate; product mix, unit costs and discount rates unchanged; implementation costs excluded):
 
-Garden's pricing depends on its cost table. Under recorded costs, closing its ≈ 5% price gap breaks even at a 9.6% unit loss; under Harbour's unit costs, at 7.4%. We therefore recommend the cost audit before any Garden price change, and the pricing experiment at Uptown first.
+| Assumed Uptown unit loss | 0% | 3% | 5% | 7% | 10% |
+|---|---:|---:|---:|---:|---:|
+| Annualised GP change | +$5,272 | +$3,004 | +$1,491 | −$21 (≈ break-even) | −$2,289 |
+
+At a 5% unit loss, about $1,491/yr is the remaining gross-profit benefit available to cover incremental implementation and ongoing costs. First-year savings after a pilot would be lower than this full-year run-rate.
+
+**Uptown pilot rules.**
+* **Primary outcome:** gross profit per day. Detecting a demand loss is not the same as proving the price rise increases profit.
+* **Proposed business guardrail:** Uptown's share of chain units sold. The half-gap break-even (≈ 6.97% unit loss) corresponds to ≈ 5.73% relative share decline at Uptown's ≈ 19% share. Two consecutive weekly breaches can trigger reversal. This is not a statistical test and not a guarantee against losses.
+* **Assumptions:** the share-to-unit conversion assumes stable comparison branches, product mix and costs. Branch switching or unrelated changes at Garden or Harbour invalidate it.
+* **Length:** 8 weeks is an initial pilot that can remain inconclusive. Its rough detectable change (≈ 7.2% of share, ≈ 8.7% of units) is larger than the break-even.
+* **Unclear result:** restore the original pre-pilot prices.
+
+**Supporting findings:**
+* **Customer targeting:** selecting customers by Q1 spending showed no demonstrated advantage over random selection for Q2 gross profit. Validate customer-history targeting before committing marketing budget ([Step 4](reports/step4_personalised_marketing.md)).
+* **10% discount:** $1,707 in H1 (up to ≈ $3,400/yr) with no targeting pattern. Test removal on randomised days; not finding harm would not prove removal is profitable ([notebook 05](notebooks/05_profit_levers.ipynb)).
 
 ## Evidence behind the main decisions
 
@@ -50,8 +61,8 @@ The two findings are linked: campaign profitability depends on costs, so Step 2 
 | Experiment sizing (107 + 107 days for +$30/day; 6-week MDE ≈ +$67/day) | Planning estimate | [02 §10](notebooks/02_promo_campaign.ipynb) |
 | 10% discount: $1,707 over 181 days (≈ $3,400/yr) | Fact (annual figure is a scenario) | [03 §8](notebooks/03_garden_costs.ipynb) |
 | Uptown prices ≈ 91.4% and Garden ≈ 95.2% of Harbour's, on all 45 products, unchanged over 181 days | Fact | [05 §2](notebooks/05_profit_levers.ipynb) |
-| Uptown at Harbour prices: ≈ $10,500/yr gross profit if volume unchanged; break-even loss of units sold 13.0% (half gap: ≈ $5,300/yr, 7.0%) | Scenario + break-even | [05 §2](notebooks/05_profit_levers.ipynb) |
-| Detectable change in Uptown's share of chain units sold: ≈ 10% (4 + 4 weeks), ≈ 7% (8 + 8 weeks); used for test length only | Planning estimate | [05 §3](notebooks/05_profit_levers.ipynb) |
+| Uptown half-gap (+4.7%): +$5,272/yr at unchanged units; break-even unit loss ≈ 6.97%; downside table | Scenario + break-even | [05 §2](notebooks/05_profit_levers.ipynb) |
+| Half-gap break-even ≈ 6.97% units ≈ 5.73% relative share decline; 8-week rough detectable change ≈ 7.2% of share ≈ 8.7% of units | Planning approximation (assumes stable comparison branches, mix, costs) | [05 §3](notebooks/05_profit_levers.ipynb) |
 | Q2 gross profit of top 10/20/30% of Q1-seen customers by Q1 GP: $5,674 / $11,410 / $17,487 | Fact (observed, not caused by any campaign) | [04 §4b](notebooks/04_personalised_marketing.ipynb) |
 | Random selections of the same size: 95% ranges $5,626–$6,359 / $11,497–$12,512 / $17,448–$18,573 | Estimate (5,000 random draws) | [04 §4b](notebooks/04_personalised_marketing.ipynb) |
 | Held-out log-loss difference, history − baseline: 0.000 (real data), −0.031 (planted-habit control); negative = history better | Model estimate | [04 §4](notebooks/04_personalised_marketing.ipynb) |
