@@ -13,17 +13,16 @@ The two findings are linked: campaign profitability depends on costs, so Step 2 
 
 ## Evidence
 
-- **Garden costing:** [summary](stories_step1/reports/step3_garden_costs.md) · [notebook](stories_step1/notebooks/03_garden_costs.ipynb)
-- **Harbour campaign:** [summary](stories_step1/reports/step2_campaign.md) · [notebook](stories_step1/notebooks/02_promo_campaign.ipynb)
-- **Data-quality audit:** [summary](stories_step1/reports/step1_audit.md) · [notebook](stories_step1/notebooks/01_data_audit.ipynb)
+- **Garden costing:** [summary](reports/step3_garden_costs.md) · [notebook](notebooks/03_garden_costs.ipynb)
+- **Harbour campaign:** [summary](reports/step2_campaign.md) · [notebook](notebooks/02_promo_campaign.ipynb)
+- **Data-quality audit:** [summary](reports/step1_audit.md) · [notebook](notebooks/01_data_audit.ipynb)
 
 Each notebook separates **measured** facts, **estimates** and **assumptions**. It also lists the alternative explanations tested, the approaches rejected, weak areas, and a practical test Stories can run. Correlation is not presented as proof of cause.
 
 ## Reproduce
 
 ```
-cd stories_step1
-python -m pip install -r requirements-step1.txt
+python -m pip install -r requirements.txt
 ```
 
-Place the supplied CSV at `stories_step1/data/raw/stories_transactions.csv`, then run the notebooks in order.
+Place the supplied CSV at `data/raw/stories_transactions.csv` (it is not uploaded to GitHub), then run the notebooks in `notebooks/` in order. See [SETUP.md](SETUP.md) for step-by-step instructions.
