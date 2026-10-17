@@ -2,14 +2,14 @@
 
 **EECE490 Stories Coffee Hackathon — Team: Aya Al Daouk, Zahraa Jouni**
 
-Stories' reported profit figures point toward two decisions: treat Garden as the weak branch, and keep running discount campaigns. We tested both against the transaction data. The first rests on a costing assumption nobody has verified. The second has no evidence of paying off.
+Stories' reported profit figures point toward two decisions: treat Garden as the weak branch, and keep running discount campaigns. We tested both against the transaction data. Garden's reported margin disadvantage is largely explained by its recorded cost table, which should be audited before anyone acts on it. The tested models do not show that Harbour's campaigns generated enough extra demand to justify repeating them unchanged; a controlled experiment is the next step.
 
 | CEO decision | Evidence | Recommended action |
 |---|---|---|
-| **Should Garden's menu, prices or management be penalised for its low margin?** | Garden's recorded unit costs ≈ Harbour's ÷ 0.7 on all 45 products, including sealed water, and never change. With Harbour's unit costs and Garden's actual sales, its margin goes from **46.9% to 62.9%** (+$15,923 in H1). | **Audit costing before acting.** Compare invoices and costing rules for water and a few representative products. At stake: ≈ $32k/yr if Garden truly overpays; otherwise, avoiding a wrong decision about the 2nd-largest branch. |
-| **Should Harbour repeat its 15% campaign?** | Best of four predictors (tested on 130 hidden periods; gradient boosting did *not* beat linear regression): extra sales **−5 units (March), −16 (May)**, against a break-even of **+72 / +93**. Holds at any plausible cost level. | **Don't repeat it unchanged.** Run any future discount as a randomized test with gross profit as the outcome (≈ 6 weeks). |
+| **Should Garden's menu, prices or management be penalised for its low margin?** | Garden's recorded unit costs ≈ Harbour's ÷ 0.7 on all 45 products, including sealed water, and never change. With Harbour's unit costs and Garden's actual sales, its margin goes from **46.9% to 62.9%** (+$15,923 in H1; same after removing repeated rows). | **Audit costing before acting.** Compare invoices and costing rules for water and a few representative products. At stake: up to ≈ $32k/yr if Garden truly overpays and equivalent supply terms are feasible; otherwise, avoiding a wrong decision about the 2nd-largest branch. |
+| **Should Harbour repeat its 15% campaign?** | Best of four predictors on a forward-in-time test (gradient boosting did *not* beat linear regression): extra sales **−5 units in March (≈90% range −45 to +30), −16 in May (−55 to +19)**, against a break-even of **+69 / +90**. The same holds without comparison branches and across four cost scenarios. | **Don't repeat it unchanged.** Test future discounts by randomizing offer days, with gross profit as the outcome. A 6-week pilot detects only large effects (≈ +$67/day). |
 
-The two findings are linked: campaign profitability depends on costs, so Step 2 recalculates its conclusion under different cost assumptions from Step 3. The conclusion does not change.
+The two findings are linked: campaign profitability depends on costs, so Step 2 recalculates its conclusion under four cost scenarios informed by Step 3. The conclusion does not change in any of them.
 
 ## Evidence
 
