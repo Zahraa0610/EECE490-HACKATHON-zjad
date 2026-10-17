@@ -2,7 +2,23 @@
 
 **EECE490 Stories Coffee Hackathon — Team: Aya Al Daouk, Zahraa Jouni**
 
-Stories' reported profit figures point toward two decisions: treat Garden as the weak branch, and keep running discount campaigns. We tested both against the transaction data. Garden's reported margin disadvantage is largely explained by its recorded cost table, which should be audited before anyone acts on it. The tested models do not show that Harbour's campaigns generated enough extra demand to justify repeating them unchanged; a controlled experiment is the next step. A supporting check finds that customer purchase history showed no demonstrated advantage for selecting valuable customers, so it should be validated before any personalised-marketing spend.
+Stories' reported profit figures point toward two decisions: treat Garden as the weak branch, and keep running discount campaigns. We tested both against the transaction data. Garden's reported margin disadvantage is largely explained by its recorded cost table, which should be audited before anyone acts on it. The tested models do not show that Harbour's campaigns generated enough extra demand to justify repeating them unchanged; a controlled experiment is the next step. Branch prices follow a flat rule as well (Uptown ≈ 91.4% of Harbour on every product), which makes a controlled Uptown pricing experiment the clearest new profit lever. A supporting check finds that customer purchase history showed no demonstrated advantage for selecting valuable customers, so it should be validated before any personalised-marketing spend.
+
+## Board decisions, ranked by gross-profit opportunity
+
+Dollar figures are **conditional annualised gross-profit opportunities** (H1 × 365/181, only if the stated condition holds). They are **not** net profit, **not** promised savings, and **should not be added together**: each depends on a different condition. Details: [notebook 05](notebooks/05_profit_levers.ipynb).
+
+| # | Decision | Conditional annualised GP opportunity | Condition | Next step |
+|---|---|---|---|---|
+| 1 | **Audit Garden's cost table** before any margin-based decision about Garden | up to ≈ $32,100/yr | Garden really pays more than Harbour, and equivalent supply terms are feasible | Compare invoices and costing rules for water and a few representative products |
+| 2 | **Run an Uptown pricing experiment.** Uptown is priced ≈ 91.4% of Harbour on all 45 products | ≈ $5,300/yr (half the gap, +4.7%) to ≈ $10,500/yr (full gap, +9.4%) | Volume unchanged. Gross profit still rises unless volume falls by about 7.0% (half gap) or 13.0% (full gap) | Raise prices by half the gap; compare Uptown's share of chain purchases with the pre-change weeks; review weekly, stop if the share falls by more than the break-even for two consecutive weeks. Prefer 8 weeks: 4 weeks detects only a ≈ 7% change, about the half-gap break-even, so it may not give a clear answer |
+| 3 | **Test removing the 10% discount** (no targeting pattern) | up to ≈ $3,400/yr | Removal loses no sales | Remove on randomly chosen days within each week; restore if no-discount days fall clearly below discount days (≈ $69/day at 4 weeks). The $9/day at stake is far below daily noise, so the test checks for clear harm and cannot prove the saving |
+| 4 | **Don't repeat Harbour's 15% campaign unchanged** | avoids an estimated −$308 / −$391 gross profit per campaign | Model assumptions in Step 2 | Randomised offer days (Step 2) |
+| 5 | *Supporting:* **Validate customer-history targeting** before committing marketing budget | no dollar figure | — | POS audit, then verified-ID pilot (Step 4) |
+
+Garden's pricing depends on its cost table. Under recorded costs, closing its ≈ 5% price gap breaks even at a 9.6% volume loss; under Harbour's unit costs, at 7.4%. We therefore recommend the cost audit before any Garden price change, and the pricing experiment at Uptown first.
+
+## Evidence behind the main decisions
 
 | CEO decision | Evidence | Recommended action |
 |---|---|---|
@@ -29,6 +45,9 @@ The two findings are linked: campaign profitability depends on costs, so Step 2 
 | Break-even +69 / +90 extra units | Model estimate, under stated mix, discount and cost assumptions | [02 §6](notebooks/02_promo_campaign.ipynb) |
 | Experiment sizing (107 + 107 days for +$30/day; 6-week MDE ≈ +$67/day) | Planning estimate | [02 §10](notebooks/02_promo_campaign.ipynb) |
 | 10% discount: $1,707 over 181 days (≈ $3,400/yr) | Fact (annual figure is a scenario) | [03 §8](notebooks/03_garden_costs.ipynb) |
+| Uptown prices ≈ 91.4% and Garden ≈ 95.2% of Harbour's, on all 45 products, unchanged over 181 days | Fact | [05 §2](notebooks/05_profit_levers.ipynb) |
+| Uptown at Harbour prices: ≈ $10,500/yr gross profit if volume unchanged; break-even volume loss 13.0% (half gap: ≈ $5,300/yr, 7.0%) | Scenario + break-even | [05 §2](notebooks/05_profit_levers.ipynb) |
+| Detectable change in Uptown's purchase share: ≈ 7% (4 + 4 weeks), ≈ 5% (8 + 8 weeks) | Planning estimate | [05 §3](notebooks/05_profit_levers.ipynb) |
 | Q2 gross profit of top 10/20/30% of Q1-seen customers by Q1 GP: $5,674 / $11,410 / $17,487 | Fact (observed, not caused by any campaign) | [04 §4b](notebooks/04_personalised_marketing.ipynb) |
 | Random selections of the same size: 95% ranges $5,626–$6,359 / $11,497–$12,512 / $17,448–$18,573 | Estimate (5,000 random draws) | [04 §4b](notebooks/04_personalised_marketing.ipynb) |
 | Held-out log-loss difference, history − baseline: 0.000 (real data), −0.031 (planted-habit control); negative = history better | Model estimate | [04 §4](notebooks/04_personalised_marketing.ipynb) |
@@ -37,6 +56,7 @@ The two findings are linked: campaign profitability depends on costs, so Step 2 
 
 - **Garden costing:** [summary](reports/step3_garden_costs.md) · [notebook](notebooks/03_garden_costs.ipynb)
 - **Harbour campaign:** [summary](reports/step2_campaign.md) · [notebook](notebooks/02_promo_campaign.ipynb)
+- **Profit levers and board table:** [notebook 05](notebooks/05_profit_levers.ipynb)
 - **Personalised marketing (supporting):** [summary](reports/step4_personalised_marketing.md) · [notebook](notebooks/04_personalised_marketing.ipynb)
 - **Data-quality audit:** [summary](reports/step1_audit.md) · [notebook](notebooks/01_data_audit.ipynb)
 - **Reproduction check:** [verification report](reports/verification.md), from a fresh clone and a new Python environment
