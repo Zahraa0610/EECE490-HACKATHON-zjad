@@ -74,6 +74,16 @@ Only notebook 05 was re-run for this revision (notebooks 01–04 were not change
 | 8-week rough detectable change | 7.16% of share → 8.69% of units |
 | Downside, annualised GP change at 0/3/5/7/10% unit loss | +5,272 / +3,004 / +1,491 / −21 / −2,289 |
 
+## Visual additions (2026-10-17, before submission)
+
+Notebooks 02, 03 and 05 were modified and re-run; notebooks 01 and 04 were not changed and not re-run.
+
+* **02:** label-only changes to the existing campaign chart (date axis label, legend entry for campaign days, caption stating the counterfactual is model-estimated and not proof of causation). No model or estimate changed. Outputs of all 11 unchanged code cells are identical to the previous version.
+* **03:** one new cell adds `garden_margin_scenario.png` from the existing scenario table (46.9% reported vs 62.9% with Harbour unit costs). Outputs of all 10 previous code cells are identical.
+* **05:** one new cell adds `uptown_profit_sensitivity.png` from the existing half-gap calculation (break-even 6.97%; +$5,272 / +$1,491 / −$2,289 at 0% / 5% / 10% unit loss); the setup cell gains the plotting import. Outputs of the 6 unchanged code cells are identical.
+* Each of the three notebooks then ran a second time from scratch: 0 errors, and every cell's text output was identical to the saved version.
+* All three images were opened and inspected visually; the README image paths exist in the repository. GitHub rendering was not checked in a browser before pushing.
+
 ## How to repeat this check
 
 1. Clone the repository and place the supplied CSV at `data/raw/stories_transactions.csv`.

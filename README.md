@@ -6,6 +6,18 @@
 
 All dollar figures are **conditional annualised gross-profit opportunities** (H1 × 365/181). They are not net profit, not promised savings, and must not be added into one total.
 
+## The financial picture at a glance
+
+![Garden margin under recorded costs vs Harbour unit costs](reports/figures/garden_margin_scenario.png)
+
+**Garden:** the reported 46.9% margin rises to 62.9% if Harbour's unit costs are applied to Garden's actual sales. The gap comes from the cost table, so audit invoices before judging Garden. This is a scenario, not realised savings. Source: [notebook 03](notebooks/03_garden_costs.ipynb).
+
+![Uptown half-gap price rise: annualised gross-profit change vs assumed unit loss](reports/figures/uptown_profit_sensitivity.png)
+
+**Uptown:** a +4.7% price rise adds ≈ $5,272/yr if demand holds, ≈ $1,491/yr at a 5% unit loss, and turns negative beyond ≈ 6.97%. Hence a guarded pilot, not a price change. Source: [notebook 05](notebooks/05_profit_levers.ipynb).
+
+**Harbour:** the campaign chart (actual vs model-estimated sales) is in the [campaign report](reports/step2_campaign.md).
+
 ## Board decisions
 
 | # | Decision | Conditional annualised GP opportunity | What must be true | Owner | First action | Implementation cost considerations |
