@@ -9,11 +9,13 @@ Harbour ran two 8-day campaigns (12–19 March and 12–19 May 2026) with 15% of
   - Gradient boosting was 5–22% less accurate in the configuration tested, so we did not use it.
 - **Estimated extra promoted-item sales:** **−5 units in March** (approximate 90% range −45 to +30) and **−16 in May** (−55 to +19). Break-even was about **+69 and +90**.
 - **Estimated effect on Harbour's total gross profit:** **−$308** (March) and **−$391** (May).
-- **Robustness:** the same picture holds with weekday and trend only, with Garden or Uptown alone as the comparison, after removing repeated rows, and across four cost scenarios.
+- **Robustness:**
+  - The estimates remain similar when comparison-branch sales are excluded or only one comparison branch is used. This reduces concern that these control variables drive the result. Whether customers switched branches cannot be observed.
+  - The picture also holds after removing repeated rows and across four cost scenarios.
 
 **The tested models do not support a break-even lift under the stated assumptions.**
 
-**Recommendation:** do not repeat the campaign unchanged. If Stories wants these discounts, test them by randomizing offer days, with daily gross profit as the main outcome. Detecting a +$30/day profit gain needs about 107 offer days and 107 no-offer days. A 6-week pilot can only detect about +$67/day, so treat it as a first check, not proof.
+**Recommendation:** do not repeat the campaign unchanged. If Stories wants these discounts, test them by randomly assigning offer days within weekday-balanced blocks (not a fixed alternating schedule), with daily gross profit as the main outcome, and check the day after each offer for carry-over. With 80% power at the 5% level, and using the model's out-of-sample daily variability with a simple adjustment for correlation between days, detecting +$30/day needs about 107 offer and 107 no-offer days. A 6-week pilot's estimated minimum detectable effect is about +$67/day. Smaller gains could still show up, but with lower probability, so treat the pilot as a first check, not proof.
 
 ![Actual vs predicted](figures/campaign_counterfactual.png)
 
@@ -30,7 +32,8 @@ Mean absolute error over hidden 8-day ordinary periods:
 
 - **Forward test:** each method uses only earlier days, which mimics real forecasting. It is used to select the method.
 - **Retrospective test:** the method is trained on all other ordinary days, as for the campaign estimate. Its errors provide the uncertainty ranges.
-- **Overlap:** the 130 windows overlap, which makes them roughly equivalent to 17 independent periods.
+- **Overlap:** the 130 windows overlap substantially and should not be read as 130 independent observations.
+- **Shared data:** both tests reuse many of the same days, so the ranges are approximate and conditional on the model's assumptions.
 
 ## Campaign estimates (linear regression)
 
