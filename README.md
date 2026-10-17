@@ -8,15 +8,19 @@ Stories' reported profit figures point toward two decisions: treat Garden as the
 
 Dollar figures are **conditional annualised gross-profit opportunities** (H1 × 365/181, only if the stated condition holds). They are **not** net profit, **not** promised savings, and **should not be added together**: each depends on a different condition. Details: [notebook 05](notebooks/05_profit_levers.ipynb).
 
-| # | Decision | Conditional annualised GP opportunity | Condition | Next step |
-|---|---|---|---|---|
-| 1 | **Audit Garden's cost table** before any margin-based decision about Garden | up to ≈ $32,100/yr | Garden really pays more than Harbour, and equivalent supply terms are feasible | Compare invoices and costing rules for water and a few representative products |
-| 2 | **Run an Uptown pricing experiment.** Uptown is priced ≈ 91.4% of Harbour on all 45 products | ≈ $5,300/yr (half the gap, +4.7%) to ≈ $10,500/yr (full gap, +9.4%) | Volume unchanged. Gross profit still rises unless volume falls by about 7.0% (half gap) or 13.0% (full gap) | Raise prices by half the gap; compare Uptown's share of chain purchases with the pre-change weeks; review weekly, stop if the share falls by more than the break-even for two consecutive weeks. Prefer 8 weeks: 4 weeks detects only a ≈ 7% change, about the half-gap break-even, so it may not give a clear answer |
-| 3 | **Test removing the 10% discount** (no targeting pattern) | up to ≈ $3,400/yr | Removal loses no sales | Remove on randomly chosen days within each week; restore if no-discount days fall clearly below discount days (≈ $69/day at 4 weeks). The $9/day at stake is far below daily noise, so the test checks for clear harm and cannot prove the saving |
-| 4 | **Don't repeat Harbour's 15% campaign unchanged** | avoids an estimated −$308 / −$391 gross profit per campaign | Model assumptions in Step 2 | Randomised offer days (Step 2) |
-| 5 | *Supporting:* **Validate customer-history targeting** before committing marketing budget | no dollar figure | — | POS audit, then verified-ID pilot (Step 4) |
+| # | Decision | Conditional annualised GP opportunity | Condition | Owner | First action | Implementation cost considerations |
+|---|---|---|---|---|---|---|
+| 1 | **Audit Garden's cost table** before any margin-based decision about Garden | up to ≈ $32,100/yr | Garden really pays more than Harbour, and equivalent supply terms are feasible | Finance / procurement | Pull supplier invoices for bottled water and 3–5 high-volume products at Garden and Harbour; check the costing rule in the POS/ERP | Staff time only; renegotiating or switching suppliers may bring contract, logistics and quality costs |
+| 2 | **Run an Uptown pricing experiment** (Uptown is priced ≈ 91.4% of Harbour on all 45 products); raise by half the gap first | ≈ $5,300/yr (half gap, +4.7%) to ≈ $10,500/yr (full gap, +9.4%) | Units sold unchanged (same mix). Gross profit still rises unless Uptown loses about 7.0% (half gap) or 13.0% (full gap) of units | Commercial / pricing lead with the Uptown manager | Fix the stop rule and test length; record Uptown's pre-change weekly share of chain units sold | POS price update, menu and signage reprint, staff briefing; risk to customer goodwill and of customers switching branches |
+| 3 | **Test removing the 10% discount** (no targeting pattern) | up to ≈ $3,400/yr | Removal loses no sales; a test of practical length is unlikely to confirm this | Operations with finance | Find out what triggers the discount at the till (policy, staff discretion, POS setting) | POS configuration to switch the discount by day, staff training, possible complaints |
+| 4 | **Don't repeat Harbour's 15% campaign unchanged** | avoids an estimated −$308 / −$391 gross profit per campaign | Model assumptions in Step 2 | Marketing with the Harbour manager | Pause repeat campaigns until a randomised-day test is designed | Planning time; offer days must be followed exactly at the till |
+| 5 | *Supporting:* **Validate customer-history targeting** before committing marketing budget | no dollar figure | — | Marketing with IT / POS | Ask the POS team how Customer ID is attached to a purchase | Audit time; a verified-ID pilot needs POS or app changes |
 
-Garden's pricing depends on its cost table. Under recorded costs, closing its ≈ 5% price gap breaks even at a 9.6% volume loss; under Harbour's unit costs, at 7.4%. We therefore recommend the cost audit before any Garden price change, and the pricing experiment at Uptown first.
+**Experiment rules.**
+* **Uptown pricing:** track Uptown's share of chain **units sold**, the same measure as the break-even. **Weekly stop rule:** restore prices if the share is more than 13.0% below its pre-change level for two consecutive weeks. This is a business tolerance set in advance, not a significance test. Test length is a planning choice: 4 weeks can detect only about a 10% change in unit share, larger than the 7.0% half-gap break-even, and 8 weeks about 7%. We recommend 8 weeks and treating an unclear result as "keep current prices".
+* **10% discount:** remove it on randomly chosen days within each week. Weekly reviews check for operational problems and for a gross-profit shortfall beyond a tolerance the board sets in advance. **Not finding significant harm does not show that removal is profitable.** The most likely result is inconclusive, and keeping or removing the discount then remains a business judgement.
+
+Garden's pricing depends on its cost table. Under recorded costs, closing its ≈ 5% price gap breaks even at a 9.6% unit loss; under Harbour's unit costs, at 7.4%. We therefore recommend the cost audit before any Garden price change, and the pricing experiment at Uptown first.
 
 ## Evidence behind the main decisions
 
@@ -46,8 +50,8 @@ The two findings are linked: campaign profitability depends on costs, so Step 2 
 | Experiment sizing (107 + 107 days for +$30/day; 6-week MDE ≈ +$67/day) | Planning estimate | [02 §10](notebooks/02_promo_campaign.ipynb) |
 | 10% discount: $1,707 over 181 days (≈ $3,400/yr) | Fact (annual figure is a scenario) | [03 §8](notebooks/03_garden_costs.ipynb) |
 | Uptown prices ≈ 91.4% and Garden ≈ 95.2% of Harbour's, on all 45 products, unchanged over 181 days | Fact | [05 §2](notebooks/05_profit_levers.ipynb) |
-| Uptown at Harbour prices: ≈ $10,500/yr gross profit if volume unchanged; break-even volume loss 13.0% (half gap: ≈ $5,300/yr, 7.0%) | Scenario + break-even | [05 §2](notebooks/05_profit_levers.ipynb) |
-| Detectable change in Uptown's purchase share: ≈ 7% (4 + 4 weeks), ≈ 5% (8 + 8 weeks) | Planning estimate | [05 §3](notebooks/05_profit_levers.ipynb) |
+| Uptown at Harbour prices: ≈ $10,500/yr gross profit if volume unchanged; break-even loss of units sold 13.0% (half gap: ≈ $5,300/yr, 7.0%) | Scenario + break-even | [05 §2](notebooks/05_profit_levers.ipynb) |
+| Detectable change in Uptown's share of chain units sold: ≈ 10% (4 + 4 weeks), ≈ 7% (8 + 8 weeks); used for test length only | Planning estimate | [05 §3](notebooks/05_profit_levers.ipynb) |
 | Q2 gross profit of top 10/20/30% of Q1-seen customers by Q1 GP: $5,674 / $11,410 / $17,487 | Fact (observed, not caused by any campaign) | [04 §4b](notebooks/04_personalised_marketing.ipynb) |
 | Random selections of the same size: 95% ranges $5,626–$6,359 / $11,497–$12,512 / $17,448–$18,573 | Estimate (5,000 random draws) | [04 §4b](notebooks/04_personalised_marketing.ipynb) |
 | Held-out log-loss difference, history − baseline: 0.000 (real data), −0.031 (planted-habit control); negative = history better | Model estimate | [04 §4](notebooks/04_personalised_marketing.ipynb) |
